@@ -22,6 +22,8 @@ const CreateBlog = ({ router }) => {
     }
   };
 
+  const [updatedPhoto, setUpdatedPhoto] = useState('Upload Featured Photo');
+
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
 
@@ -95,7 +97,7 @@ const CreateBlog = ({ router }) => {
     setValues({ ...values, [name]: value, formData, error: '' });
 
     if (name === 'photo') {
-      alert(e.target.value);
+      setUpdatedPhoto(e.target.files[0].name);
     }
   };
 
@@ -213,7 +215,7 @@ const CreateBlog = ({ router }) => {
           />
           <h5>Image (Max size: 1mb)</h5>
           <label className="mb-2 col-span-3 bg-blue-500 hover:bg-blue-700 text-white rounded btn btn-outline-info text-center">
-            Upload featured image
+            {updatedPhoto}
             <input
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 "
               onChange={handleChange('photo')}

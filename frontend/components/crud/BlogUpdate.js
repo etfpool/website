@@ -29,7 +29,7 @@ const BlogUpdate = ({ router }) => {
     body: '',
   });
 
-  const { error, success, formData, title } = values;
+  const { error, success, formData, title, ref } = values;
   const token = getCookie('token');
 
   useEffect(() => {
@@ -233,14 +233,59 @@ const BlogUpdate = ({ router }) => {
   const updateBlogForm = () => {
     return (
       <form onSubmit={editBlog}>
-        <div className="form-group">
-          <label className="text-muted">Title</label>
+        <div className="grid grid-cols-4">
+          <label className="text-muted">Title:</label>
           <input
             type="text"
-            className="w-full bg-gray-200 form-control rounded"
+            class="mb-2 col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Title"
             value={title}
             onChange={handleChange('title')}
+          ></input>
+
+          <label className="text-muted">Ref link:</label>
+          <input
+            type="text"
+            class="mb-2 col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Reference"
+            value={ref}
+            onChange={handleChange('ref')}
           />
+          <h5>Image (Max size: 1mb)</h5>
+          <label className="mb-2 col-span-3 bg-blue-500 hover:bg-blue-700 text-white rounded btn btn-outline-info text-center">
+            Upload featured image
+            <input
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 "
+              onChange={handleChange('photo')}
+              type="file"
+              accept="image/*"
+              hidden
+            />
+          </label>
+        </div>
+        {body && (
+          <img
+            src={`${API}/blog/photo/${router.query.slug}`}
+            alt={title}
+            style={{ width: '100%' }}
+          />
+        )}
+        <div className="grid grid-cols-2 mb-4">
+          <div className="mr-2">
+            <h5>Categories</h5>
+            <hr />
+
+            <ul style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+              {showCategories()}
+            </ul>
+          </div>
+          <div className="ml-2">
+            <h5>Tags</h5>
+            <hr />
+            <ul style={{ maxHeight: '200px', overflowY: 'scroll' }}>
+              {showTags()}
+            </ul>
+          </div>
         </div>
 
         <div className="form-group">
@@ -253,8 +298,11 @@ const BlogUpdate = ({ router }) => {
           />
         </div>
 
-        <div>
-          <button type="submit" className="btn btn-primary">
+        <div className="flex justify-center mb-8">
+          <button
+            type="submit"
+            className="w-full btn btn-primary bg-blue-500 hover:bg-blue-700 py-1 rounded mt-4 text-white"
+          >
             Update
           </button>
         </div>
@@ -271,50 +319,6 @@ const BlogUpdate = ({ router }) => {
           <div className="pt-3">
             {showSuccess()}
             {showError()}
-          </div>
-
-          {body && (
-            <img
-              src={`${API}/blog/photo/${router.query.slug}`}
-              alt={title}
-              style={{ width: '100%' }}
-            />
-          )}
-        </div>
-
-        <div className="col-md-4">
-          <div>
-            <div className="form-group pb-2">
-              <h5>Featured image</h5>
-              <hr />
-
-              <small className="text-muted">Max size: 1mb</small>
-              <br />
-              <label className="btn btn-outline-info">
-                Upload featured image
-                <input
-                  onChange={handleChange('photo')}
-                  type="file"
-                  accept="image/*"
-                  hidden
-                />
-              </label>
-            </div>
-          </div>
-          <div>
-            <h5>Categories</h5>
-            <hr />
-
-            <ul style={{ maxHeight: '200px', overflowY: 'scroll' }}>
-              {showCategories()}
-            </ul>
-          </div>
-          <div>
-            <h5>Tags</h5>
-            <hr />
-            <ul style={{ maxHeight: '200px', overflowY: 'scroll' }}>
-              {showTags()}
-            </ul>
           </div>
         </div>
       </div>
