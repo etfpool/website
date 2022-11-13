@@ -20,8 +20,9 @@ export default function AboutUs({ globalData }) {
         <main>
           <article className="prose dark:prose-dark">
             <p>
-              Rgeen.com is the world's most-referenced price-tracking website
-              for cryptoassets in the rapidly growing cryptocurrency space.
+              Rgeen.com is the world&apos;s most-referenced price-tracking
+              website for cryptoassets in the rapidly growing cryptocurrency
+              space.
             </p>
             <p>
               Its mission is to make crypto discoverable and efficient globally
@@ -39,15 +40,16 @@ export default function AboutUs({ globalData }) {
               to become the most trusted source by users, institutions, and
               media for comparing thousands of cryptoassets and is commonly
               cited by NHK, Bloomberg, and other major news outlets. (Even the
-              U.S. government uses rgeen's data for research and reports!)
+              U.S. government uses rgeen&apos;s data for research and reports!)
               Through the acquisition, rgeen plans to tap into its parent
-              company's extensive resources to acquire more in-depth data into
-              projects, reduce information asymmetry in the crypto industry and
-              bring higher-quality data to its hundreds of millions of users.
-              This move should boost demand for CryptoCompare; a tool that helps
-              individuals analyze which currencies perform particularly well or
-              poorly based on market trends, financial indicators like
-              volatility levels versus CPI and Bitcoin Value vs. JPY values
+              company&apos;s extensive resources to acquire more in-depth data
+              into projects, reduce information asymmetry in the crypto industry
+              and bring higher-quality data to its hundreds of millions of
+              users. This move should boost demand for CryptoCompare; a tool
+              that helps individuals analyze which currencies perform
+              particularly well or poorly based on market trends, financial
+              indicators like volatility levels versus CPI and Bitcoin Value vs.
+              JPY values
             </p>
           </article>
         </main>

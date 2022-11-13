@@ -53,7 +53,7 @@ const BlogRead = ({ username }) => {
     } else if (isAuth() && isAuth().role === 1) {
       return (
         <Link href={`/admin/crud/${blog.slug}`}>
-          <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+          <a className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
             Update
           </a>
         </Link>
@@ -72,7 +72,7 @@ const BlogRead = ({ username }) => {
           </p>
 
           <button
-            class="mr-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-4 rounded"
+            className="mr-4 bg-orange-500 hover:bg-orange-700 text-white font-bold px-4 rounded"
             onClick={() => deleteConfirm(blog.slug)}
           >
             Delete

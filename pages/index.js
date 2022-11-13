@@ -136,54 +136,56 @@ export default function Index({ posts, globalData }) {
           </button>
         </div>
         <div className="sm:flex sm:items-center sm:justify-between">
-          <a
+          <Link
             href="/"
             className="invisible md:visible flex items-center mb-4 md:mb-0"
           >
-            <img
-              src="/logo.png"
-              className="mr-3 h-6 sm:h-9"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Rgeen.com
-            </span>
-          </a>
+            <>
+              <img
+                src="/logo.png"
+                className="mr-3 h-6 sm:h-9"
+                alt="Flowbite Logo"
+              />
+              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                Rgeen.com
+              </span>
+            </>
+          </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
-              <a href="/about" className="mr-4 hover:underline md:mr-6 ">
+              <Link href="/about" className="mr-4 hover:underline md:mr-6 ">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" className="mr-4 hover:underline md:mr-6">
+              <Link href="/privacy" className="mr-4 hover:underline md:mr-6">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="mr-4 hover:underline">
+              <Link href="/contact" className="mr-4 hover:underline">
                 Contact
-              </a>
+              </Link>
             </li>
             {loggedIn ? (
               <>
                 <li>
-                  <a href="/admin" className="mr-4 hover:underline">
+                  <Link href="/admin" className="mr-4 hover:underline">
                     {isAuth().name}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/login" className="mr-4 hover:underline">
+                  <Link href="/login" className="mr-4 hover:underline">
                     Logout
-                  </a>
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <a href="/login" className="mr-4 hover:underline">
+                  <Link href="/login" className="mr-4 hover:underline">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 {/* <li>
                   <a href="/register" className="mr-4 hover:underline">
@@ -197,9 +199,9 @@ export default function Index({ posts, globalData }) {
         <hr className="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2022{' '}
-          <a href="https://rgeen.com/" className="hover:underline">
+          <Link href="https://rgeen.com/" className="hover:underline">
             Rgeen™
-          </a>
+          </Link>
           . All Rights Reserved.
         </span>
       </footer>
