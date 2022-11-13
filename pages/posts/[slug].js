@@ -1,16 +1,15 @@
 import React from 'react';
-import Layout, { GradientBackground } from '../../components/Layout';
-import { useState, useEffect } from 'react';
-import { singleBlog, listRelated } from '../../actions/blog';
 import { API } from '../../config';
-import SmallCard from '../../components/blog/SmallCard';
-import Navbar from '../../components/Navbar';
-import SearchBar from '../../components/SearchBar';
 import SEO from '../../components/SEO';
-import Footer from '../../components/Footer';
-
+import { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SearchBar from '../../components/SearchBar';
+import SmallCard from '../../components/blog/SmallCard';
+import { singleBlog, listRelated } from '../../actions/blog';
+import Layout, { GradientBackground } from '../../components/Layout';
 
 const SingleBlog = ({ blog }) => {
   const responsive = {
@@ -39,7 +38,6 @@ const SingleBlog = ({ blog }) => {
         console.log(data.error);
       } else {
         setRelated(data);
-        console.log(data);
       }
     });
   };
@@ -151,7 +149,7 @@ const SingleBlog = ({ blog }) => {
           </div>
         </div>
 
-        <article class="prose dark:prose-invert max-w-none prose-lg">
+        <article className="prose dark:prose-invert max-w-none prose-lg">
           <div dangerouslySetInnerHTML={{ __html: blog.body }} />
         </article>
 
