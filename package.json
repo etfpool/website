@@ -1,16 +1,10 @@
 {
-  "name": "nextjs-blog-theme",
-  "description": "A customizable Next.js and Tailwind blog starter. Designed by the Bejamas agency.",
-  "author": "Bejamas and Netlify Inc.",
-  "contributors": [
-    "Charlie Gerard",
-    "Prince Wilson",
-    "Tara Manicsic",
-    "Thom Krupa"
-  ],
-  "homepage": "https://github.com/netlify-templates/nextjs-blog-theme",
+  "name": "rgeen.com",
+  "description": "Https://www.Rgeen.com",
+  "author": "Do Ba Hung",
+  "homepage": "https://www.rgeen.com",
   "bugs": {
-    "url": "https://github.com/netlify-templates/nextjs-blog-theme/issues"
+    "url": "https://www.rgeen.com"
   },
   "scripts": {
     "dev:watch": "next-remote-watch ./posts",
